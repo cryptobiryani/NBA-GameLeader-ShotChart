@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import nba_functions as nba
 
-def create_court(x,y,df, game_date,file_name, color='white'):
+def create_court(x,y,df, game_code, game_date,file_name, color='white'):
     '''
     Params: list of x coordinates, list of y coordinates,
             dataframe of team's top scorer, court color
@@ -55,6 +55,6 @@ def create_court(x,y,df, game_date,file_name, color='white'):
     y=[num+60 for num in y]
     x=[-1*num for num in x]
     ax.hexbin(x, y, gridsize=(50, 50), extent=(-300, 300, 0, 940), mincnt=1, alpha=.8, color='green', cmap='Greens', bins='log')
-    ax.text(-240, 450, f"{nba.get_player_name(df)} ({df['pts'][0]}PTS, {df['ast'][0]}AST, {df['rebs'][0]}REBS) \n {nba.get_team_acroynm(df)} VS {nba.get_team_acroynm(df, is_home=False)} on {game_date}", ha='left', va='top')
+    ax.text(-240, 450, f"{nba.get_player_name(df)} ({df['pts'][0]}PTS, {df['ast'][0]}AST, {df['rebs'][0]}REBS) \n {nba.get_team_acroynm(game_code)} VS {nba.get_team_acroynm(game_code, is_home=False)} on {game_date}", ha='left', va='top')
     plt.savefig(file_name, dpi=300)
     plt.close(fig)
