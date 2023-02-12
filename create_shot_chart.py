@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import nba_functions as nba
 
+# Plots court
 def create_court(x,y,df, game_code, game_date,file_name, color='white'):
     '''
     Params: list of x coordinates, list of y coordinates,
