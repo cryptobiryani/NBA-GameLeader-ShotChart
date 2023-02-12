@@ -5,6 +5,7 @@ import pandas as pd
 import twitter_upload_media
 import credentials
 
+# Final function, tweets out shot chart with added text for tweet
 if __name__ == '__main__':
     #Get path for image and CSV. CSV is used to store record of tweets posted to avoid repeats.
     image_file=credentials.image_file
